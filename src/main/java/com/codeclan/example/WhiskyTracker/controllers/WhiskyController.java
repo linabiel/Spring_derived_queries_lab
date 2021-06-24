@@ -18,12 +18,12 @@ public class WhiskyController {
     @Autowired
     WhiskyRepository whiskyRepository;
 
-    @GetMapping(value = "/whiskys")
+    @GetMapping(value = "/whiskies")
     public ResponseEntity<List<Whisky>> getAllWhiskys(){
         return new ResponseEntity<>(whiskyRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/whiskys/{id}")
+    @GetMapping(value = "/whiskies/{id}")
     public ResponseEntity getWhiskey(@PathVariable Long id){
         return new ResponseEntity<>(whiskyRepository.findById(id), HttpStatus.OK);
     }
